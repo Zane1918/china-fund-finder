@@ -36,3 +36,17 @@ asyncio_mode = "auto"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/china_fund_finder"]
+
+[tool.pyrefly]
+project-excludes = [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/venv/**/*",
+    ".venv/**/*",
+]
+
+[dependency-groups]
+dev = [
+    "pyrefly>=0.57.0",
+    "ruff>=0.15.6",
+]
