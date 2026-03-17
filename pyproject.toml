@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "china-fund-finder"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit",
+    "langchain",
+    "langchain-anthropic",
+    "pydantic",
+    "tushare",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pyrefly",
+    "pytest",
+    "anyio",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/china_fund_finder"]
