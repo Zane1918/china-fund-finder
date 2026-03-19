@@ -234,6 +234,13 @@ dev = [
     { name = "ruff" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pyrefly" },
+    { name = "pytest" },
+    { name = "ruff" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "anyio", marker = "extra == 'dev'" },
@@ -248,6 +255,13 @@ requires-dist = [
     { name = "tushare" },
 ]
 provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pyrefly", specifier = ">=0.57.0" },
+    { name = "pytest", specifier = ">=9.0.2" },
+    { name = "ruff", specifier = ">=0.15.6" },
+]
 
 [[package]]
 name = "click"
